@@ -1,11 +1,11 @@
 ---
 name: test-case
-description: Cria ciclos/planos de testes e casos de testes no Zephyr Scale (Jira) usando o MCP zephyr-server, a partir de um arquivo de plano de testes ou de argumentos informados pelo usuário.
+description: Cria ciclos/planos de testes e casos de testes no Zephyr (Jira) usando o MCP zephyr-server, a partir de um arquivo de plano de testes ou de argumentos informados pelo usuário.
 ---
 
-# Importador de Casos de Teste para o Zephyr Scale (Jira)
+# Importador de Casos de Teste para o Zephyr (Jira)
 
-Esta skill capacita o agente a ler cenários de teste (em formato Gherkin/BDD ou texto estruturado) a partir de um arquivo markdown ou de argumentos diretos do usuário e criá-los automaticamente no Zephyr Scale usando o MCP `zephyr-server`. Além disso, agrupa os casos de teste criados em um novo ciclo de testes (Test Run/Cycle).
+Esta skill capacita o agente a ler cenários de teste (em formato Gherkin/BDD ou texto estruturado) a partir de um arquivo markdown ou de argumentos diretos do usuário e criá-los automaticamente no Zephyr usando o MCP `zephyr-server`. Além disso, agrupa os casos de teste criados em um novo ciclo de testes (Test Run/Cycle).
 
 ---
 
@@ -40,7 +40,7 @@ Se a entrada for por argumentos/texto direto, estruture-os de forma equivalente 
 
 ## 3. Fluxo de Execução com o MCP zephyr-server
 
-Você deve seguir rigorosamente a sequência de passos abaixo usando as ferramentas do MCP `zephyr-server`:
+Você deve seguir rigorosamente a sequência de passos abaixo, executando as ferramentas do MCP `zephyr-server` para criar a pasta, os casos de teste e o ciclo diretamente no Zephyr:
 
 ### Passo 1: Criar a pasta para os casos de teste (Opcional/Se solicitado)
 Se um caminho de pasta for fornecido (ex: `"/TASK-1234"`):
@@ -58,7 +58,7 @@ Se um caminho de pasta for fornecido (ex: `"/TASK-1234"`):
 
 ### Passo 2: Criar os Casos de Teste (Test Cases)
 Para cada cenário extraído:
-1. Chame a ferramenta `create_test_case`:
+1. Chame a ferramenta `create_test_case` do servidor `zephyr-server` para criar o caso de teste no Zephyr:
    - **Servidor:** `zephyr-server`
    - **Ferramenta:** `create_test_case`
    - **Argumentos:**
@@ -81,7 +81,7 @@ Para cada cenário extraído:
 
 ### Passo 3: Criar o Ciclo de Teste (Test Run)
 Após a criação bem-sucedida de todos os casos de teste:
-1. Chame a ferramenta `create_test_run` para agrupar todos eles:
+1. Chame a ferramenta `create_test_run` do servidor `zephyr-server` para agrupar todos eles em um ciclo no Zephyr:
    - **Servidor:** `zephyr-server`
    - **Ferramenta:** `create_test_run`
    - **Argumentos:**
