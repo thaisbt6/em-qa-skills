@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "mantisbt": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@dpesch/mantisbt-mcp-server"],
+      "env": {
+        "MANTIS_BASE_URL": "https://mantis.escolarmanageronline.com.br/api/rest",
+        "MANTIS_API_KEY": ""
+      }
+    },
+    "zephyr-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@smartbear/mcp@latest"],
+      "env": {
+        "ZEPHYR_BASE_URL": "https://api.zephyrscale.smartbear.com/v2",
+        "ZEPHYR_API_TOKEN": ""
+      }
+    },
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@aashari/mcp-server-atlassian-jira"],
+      "env": {
+        "ATLASSIAN_SITE_NAME": "https://escolarmanager.atlassian.net",
+        "ATLASSIAN_USER_EMAIL": "thais.bispo@escolarmanager.com.br",
+        "ATLASSIAN_API_TOKEN": ""
+      }
+    }
+  }
+}
